@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Product App</string>
+    <string name="home_an_application_using_firebase_tools">Une application utilisant les outils Firebase</string>
+    <string name="home_sign_up">S\'enregistrer</string>
+</resources>
