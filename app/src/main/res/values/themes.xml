@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ProductApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.ProductApp" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
@@ -9,11 +9,66 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <style name="ThemeLogin" parent="Theme.ProductApp">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <!--A jout du theme fullscreen -->
+    <style name="FullScreenTheme" parent="Theme.ProductApp">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textColor">@color/black</item>
     </style>
+
+    <style name="LoginTheme" parent="FirebaseUI">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorSecondary">@color/grey</item>
+
+        <!-- Couleur du texte -->
+        <item name="android:textColorPrimary">@color/grey</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textColor">@color/grey</item>
+
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:icon">@drawable/firebase_logo</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--  Couleur du texte des boutons -->
+    <style name="FirebaseUI.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+    <!--    Couleur de la bordure du inputTextLayout non sélectionné-->
+    <style name="FirebaseUI.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+
+    </style>
+
+    <style name="FirebaseUI.Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="FirebaseUI.Text.Link">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+
 </resources>

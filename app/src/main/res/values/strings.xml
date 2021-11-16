@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name" translatable="false">Product App</string>
-    <string name="home_product_app">Product App</string>
+    <string name="home_product_app" translatable="false">Product App</string>
     <string name="home_an_application_using_firebase_tools">An application using Firebase tools</string>
     <string name="home_sign_up">Sign Up</string>
     <string name="toto" translatable="false">Toto</string>
+    <string name="sign_result_canceled">Error, authentication canceled !</string>
+    <string name="sign_result_no_internet">No internet</string>
+    <string name="sign_result_unknow_error">Unknow error</string>
 </resources>
