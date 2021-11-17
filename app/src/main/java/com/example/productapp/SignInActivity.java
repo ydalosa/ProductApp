@@ -31,7 +31,7 @@ import java.util.List;
 /** #4.1 Ajout du theme dans le manifest et changement du logo **/
 /** #5 Préparation du design de la page du choix de connexion **/
 /** #5.1 Ajout de la shape pour la forme du bouton **/
-public class MainActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
 
     /**
      * Variables globales
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if(currentUser != null){
             // Intent vers l'activité principale
+            startActivity(new Intent(SignInActivity.this, HomeActivity.class));
         }
     }
 

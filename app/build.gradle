@@ -44,6 +44,9 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-firestore:8.0.0'
     // Firestore
     implementation 'com.google.firebase:firebase-firestore:24.0.0'
+    // Storage
+    implementation 'com.google.firebase:firebase-storage:20.0.0'
+
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
