@@ -9,12 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.productapp.commons.Utils;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -24,7 +24,7 @@ import java.util.List;
 /** #0 Connexion au compte Google qui gère Firebase **/
 /** #1 Ajout de l'app à un projet Firebase au besoin en créer un avec génération du SHA1 **/
 /** #1.1 Activer Authenticator dans Firebase > Email Password **/
-/** #2 Ajout de Google Authentificator via Email and Password en utilisant le menu Tools > Firebase **/
+/** #2 Ajout de Google Authenticator via Email and Password en utilisant le menu Tools > Firebase **/
 /** #3 Ajout des dépendances pour FirebaseUI dans le Gradle Module **/
 
 /** #4 Préparation du thème à afficher dans colors.xml - dimens.xml et theme.xml **/
@@ -43,7 +43,7 @@ public class SignInActivity extends AppCompatActivity {
      * Initialisation des composants
      **/
     public void init() {
-        baseView = findViewById(R.id.mainLayout);
+        baseView = findViewById(R.id.mainLayoutSignIn);
     }
 
     /**
@@ -57,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_in);
         init();
     }
 
@@ -71,9 +71,6 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
-    private void showSnackBar(String message) {
-        Snackbar.make(baseView, message, Snackbar.LENGTH_LONG).show();
-    }
 
 
 
@@ -97,17 +94,17 @@ public class SignInActivity extends AppCompatActivity {
         IdpResponse reponse = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
             /// Connecté
-            showSnackBar("Connected !");
+            Utils.showSnackBar(baseView,"Connected !");
             /** #1 Gestion de l'affichage de l'activité de l'app **/
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         } else {
             /// Pas Connecté
             if(reponse == null) {
-                showSnackBar(getString(R.string.sign_result_canceled));
+                Utils.showSnackBar(baseView, getString(R.string.sign_result_canceled));
             } else if(reponse.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                showSnackBar(getString(R.string.sign_result_no_internet));
+                Utils.showSnackBar(baseView, getString(R.string.sign_result_no_internet));
             } else if(reponse.getError().getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
-                showSnackBar(getString(R.string.sign_result_unknow_error));
+                Utils.showSnackBar(baseView, getString(R.string.sign_result_unknow_error));
             }
         }
     }

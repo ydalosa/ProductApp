@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,23 +18,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class AdapterFilms extends FirestoreRecyclerAdapter<ModelFilms, AdapterFilms.FilmsViewHolder> {
 
     private static final String TAG = "Adapter Firestore";
 
-    private OnItemClickListener mOnItemClickListener;
-
-    public interface OnItemClickListener {
-        void onItemClick(int position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.mOnItemClickListener = onItemClickListener;
-    }
-
-    /**
+       /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
      * FirestoreRecyclerOptions} for configuration options.
      *
@@ -95,14 +88,67 @@ public class AdapterFilms extends FirestoreRecyclerAdapter<ModelFilms, AdapterFi
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mOnItemClickListener != null) {
-                        int pos = getBindingAdapterPosition();
-                        if (pos != RecyclerView.NO_POSITION) {
-                            mOnItemClickListener.onItemClick(pos);
-                        }
-                    }
+                 int position = getBindingAdapterPosition();
+                 if(position != RecyclerView.NO_POSITION && filmClickListener != null){
+                     DocumentSnapshot filmSnapshot = getSnapshots().getSnapshot(position);
+                     filmClickListener.onItemClick(filmSnapshot, position);
+                 }
                 }
             });
         }
     }
-}
+
+    /** #1 Interface **/
+    public interface OnItemClickListener{
+        void onItemClick(DocumentSnapshot documentSnapshot, int position);
+    }
+
+    private OnItemClickListener filmClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener filmClickListener){
+        this.filmClickListener = filmClickListener;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

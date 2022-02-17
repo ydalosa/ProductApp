@@ -5,9 +5,14 @@
       <map>
         <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/drawable/shape_btn.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/drawable/shape_todel.xml" value="0.13055555555555556" />
+        <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/layout-land/activity_to_del_detail.xml" value="0.3630630630630631" />
+        <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/layout/activity_detail.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/layout/activity_home.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/layout/activity_sign_in.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/layout/activity_to_del_detail.xml" value="0.3784037558685446" />
         <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/layout/row_film.xml" value="0.536" />
+        <entry key="..\:/Users/samue/AndroidStudioProjects/ProductApp/app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

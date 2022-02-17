@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class AddSampleDatasToFireBase extends Application {
@@ -39,6 +40,7 @@ public class AddSampleDatasToFireBase extends Application {
 
     // Les clés pour l'association des colonnes dans la base de données **/
     private static final String KEY_TITRE = "titre";
+    private static final String KEY_TITRE_MINUSCULE = "titre_minuscule";
     private static final String KEY_ANNEE = "annee";
     private static final String KEY_ACTEURS = "acteurs";
     private static final String KEY_AFFICHE = "affiche";
@@ -118,6 +120,7 @@ public class AddSampleDatasToFireBase extends Application {
                                             urlStorageAffiche = task.getResult().toString();
                                             // Puis on récupère les infos de texte
                                             String titre = data[0];
+                                            String titreMinuscule = titre.toLowerCase();
                                             int annee = Integer.decode(data[1]);
 //                                            String[] acteurs = data[2].split(",");
                                             String acteurs = data[2];
@@ -125,6 +128,7 @@ public class AddSampleDatasToFireBase extends Application {
                                             // Et on les préparent pour les envoyer
                                             Map<String, Object> datas = new HashMap<>();
                                             datas.put(KEY_TITRE, titre);
+                                            datas.put(KEY_TITRE_MINUSCULE, titreMinuscule);
                                             datas.put(KEY_ANNEE, annee);
                                             datas.put(KEY_ACTEURS, acteurs);
                                             datas.put(KEY_AFFICHE, urlStorageAffiche);

@@ -2,4 +2,8 @@
 <resources>
     <string name="home_an_application_using_firebase_tools">Une application utilisant les outils Firebase</string>
     <string name="home_sign_up">S\'enregistrer</string>
+    <string name="action_search">Rechercher</string>
+    <string name="sign_result_no_internet">Pas de réseau</string>
+    <string name="sign_result_unknow_error">Erreur inconnue</string>
+    <string name="sign_result_canceled">Erreur, authentification annulée !</string>
 </resources>
