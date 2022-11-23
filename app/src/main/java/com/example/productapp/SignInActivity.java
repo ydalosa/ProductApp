@@ -93,7 +93,7 @@ public class SignInActivity extends AppCompatActivity {
     private void onSignResult(FirebaseAuthUIAuthenticationResult result) {
         IdpResponse reponse = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
-            /// Connecté
+            
             Utils.showSnackBar(baseView,"Connected !");
             /** #1 Gestion de l'affichage de l'activité de l'app **/
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

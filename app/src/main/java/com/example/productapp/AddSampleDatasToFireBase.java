@@ -1,13 +1,10 @@
 package com.example.productapp;
 
 import android.app.Application;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
-import android.webkit.MimeTypeMap;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -27,7 +24,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class AddSampleDatasToFireBase extends Application {
